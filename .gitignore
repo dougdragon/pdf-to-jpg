@@ -1,0 +1,6 @@
+# Ignore generated zip files
+*.zip
+# Ignore input directory files
+input/*
+# Ignore virtual environment
+venv/*
