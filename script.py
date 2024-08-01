@@ -1,3 +1,4 @@
+"""Generates a zip file containing jpg images of PDF files"""
 import os
 import shutil
 from datetime import datetime
