@@ -29,6 +29,7 @@ pdf_file_names = [
             and f.endswith('.pdf')
 ]
 print(f'File names collected: {len(pdf_file_names)}')
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 print('Converting to JPG now...')
 # Loop over the file names in the list generating a jpg file for each and saving
 # them in the output directory
