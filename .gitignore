@@ -1,6 +1,6 @@
 # Ignore generated zip files
 *.zip
 # Ignore input directory files
-input/*
+input/*.pdf
 # Ignore virtual environment
 venv/*

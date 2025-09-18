@@ -36,7 +36,7 @@ print('Converting to JPG now...')
 start_time = datetime.now()
 for file_name in pdf_file_names:
     input_file_path = os.path.join(os.getcwd(), INPUT_DIR, file_name)
-    output_file_name = f'{file_name.split(".pdf")[0]}'
+    OUTPUT_FILE_NAME = f'{file_name.split(".pdf")[0]}'
     pdf = pdfium.PdfDocument(input_file_path)
     for i in range(len(pdf)):
         page = pdf[i]
@@ -45,21 +45,21 @@ for file_name in pdf_file_names:
             os.path.join(
                 os.getcwd(),
                 OUTPUT_DIR,
-                f'{output_file_name}_{i}.jpg'
+                f'{OUTPUT_FILE_NAME}_{i}.jpg'
             )
         )
         # Add the generated JPG file name to a list
-        generated_jpg_files.append(output_file_name)
+        generated_jpg_files.append(OUTPUT_FILE_NAME)
 print('JPG files generated.')
 try:
     print('Now adding to zip file...')
-    zip_file_name = f'{datetime.now().strftime("%Y-%m-%d")}_pdf_to_jpg'
+    ZIP_FILE_NAME = f'{datetime.now().strftime("%Y-%m-%d")}_pdf_to_jpg'
     shutil.make_archive(
-        zip_file_name,
+        ZIP_FILE_NAME,
         'zip',
         os.path.join(os.getcwd(), OUTPUT_DIR)
     )
-    print(f'Zip file created: {os.path.join(os.getcwd(), zip_file_name)}')
+    print(f'Zip file created: {os.path.join(os.getcwd(), ZIP_FILE_NAME)}')
     remove_image_files()
 except Exception as e:
     print(f'Error creating zip file: {e}')
